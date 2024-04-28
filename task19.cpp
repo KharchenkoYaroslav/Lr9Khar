@@ -20,7 +20,7 @@ ostream &operator<<(ostream &stream, Box &obj)
 {
     for (int i = 0; i < obj.size; ++i) {
             for (int j = 0; j < obj.size; ++j) {
-                stream << (char)1 << ' ';
+                stream << 0 << ' ';
             }
             stream << endl;
         }
