@@ -9,7 +9,7 @@ public:
     stack();
     void push(char ch); // push character on stack
     char pop();         // pop character from stack
-    friend ostream &operator<<(ostream &stream, stack obj);
+    friend ostream &operator<<(ostream &stream, stack &obj);
 };
 // Initialize the stack:
 stack::stack()
@@ -38,7 +38,7 @@ char stack::pop()
     tos--;
     return stck[tos];
 }
-ostream &operator<<(ostream &stream, stack obj)
+ostream &operator<<(ostream &stream, stack &obj)
 {
     int top = obj.tos -1;
     while (top != -1)

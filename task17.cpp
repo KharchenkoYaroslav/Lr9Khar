@@ -9,7 +9,7 @@ class pwr
     double result; // base to the exponent power
 public:
     pwr(int b, int e);
-    friend ostream &operator<<(ostream &stream, pwr obj);
+    friend ostream &operator<<(ostream &stream, pwr &obj);
     friend istream &operator>>(istream &stream, pwr &obj);
 };
 pwr::pwr(int b, int e)
@@ -21,7 +21,7 @@ pwr::pwr(int b, int e)
         result = result * base;
 }
 
-ostream &operator<<(ostream &stream, pwr obj)
+ostream &operator<<(ostream &stream, pwr &obj)
 {
     stream << obj.base << " ^ " << obj.exponent << " = " << obj.result << endl;
     return stream;

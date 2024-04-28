@@ -11,7 +11,7 @@ public:
     strtype(char *ptr);
     strtype();
     ~strtype() { delete[] p; }
-    friend ostream &operator<<(ostream &stream, strtype obj);
+    friend ostream &operator<<(ostream &stream, strtype &obj);
     friend istream &operator>>(istream &stream, strtype &obj);
 };
 strtype::strtype()
@@ -32,7 +32,7 @@ strtype::strtype(char *ptr)
     strcpy(p, ptr);
 }
 
-ostream &operator<<(ostream &stream, strtype obj)
+ostream &operator<<(ostream &stream, strtype &obj)
 {
     stream << obj.p << ", " << obj.len;
     return stream;

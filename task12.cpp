@@ -10,7 +10,7 @@ class Number
 public:
     Number(int num);
     Number();
-    friend ostream &operator<<(ostream &stream, Number obj);
+    friend ostream &operator<<(ostream &stream, Number &obj);
     friend istream &operator>>(istream &stream, Number &obj);
 };
 Number::Number()
@@ -33,7 +33,7 @@ Number::Number(int num)
     }
 }
 
-ostream &operator<<(ostream &stream, Number obj)
+ostream &operator<<(ostream &stream, Number &obj)
 {
     if (obj.max != 0){
         stream << obj.number << ", max: " << obj.max;

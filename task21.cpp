@@ -13,10 +13,10 @@ public:
         feet = f;
         cms = f * 30.48;
     }
-    friend ostream &operator<<(ostream &stream, ft_to_cms obj);
+    friend ostream &operator<<(ostream &stream, ft_to_cms &obj);
     friend istream &operator>>(istream &stream, ft_to_cms &obj);
 };
-ostream &operator<<(ostream &stream, ft_to_cms obj)
+ostream &operator<<(ostream &stream, ft_to_cms &obj)
 {
     stream << "Feet: " << obj.feet << ", cms: " << obj.cms << endl;
     return stream;

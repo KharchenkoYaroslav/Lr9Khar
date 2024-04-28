@@ -20,7 +20,7 @@ public:
     {
         circumference = 2 * distance * 3.1416;
     }
-    friend ostream &operator<<(ostream &stream, earth obj);
+    friend ostream &operator<<(ostream &stream, earth &obj);
     void show()
     {
         cout << "Distance from sum: " << distance << endl;
@@ -28,7 +28,7 @@ public:
         cout << "Circumference of orbit: " << circumference << endl;
     }
 };
-ostream &operator<<(ostream &stream, earth obj)
+ostream &operator<<(ostream &stream, earth &obj)
 {
     stream << "Distance from sum: " << obj.distance << endl;
     stream << "Days in orbit: " << obj.revolve << endl;

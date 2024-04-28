@@ -10,13 +10,13 @@ public:
 
     Box(int s) : size(s) {}
 
-    friend ostream &operator<<(ostream &stream, Box obj);
+    friend ostream &operator<<(ostream &stream, Box &obj);
 
     void drawBox() const {
         
     }
 };
-ostream &operator<<(ostream &stream, Box obj)
+ostream &operator<<(ostream &stream, Box &obj)
 {
     for (int i = 0; i < obj.size; ++i) {
             for (int j = 0; j < obj.size; ++j) {

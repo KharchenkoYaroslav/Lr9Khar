@@ -10,12 +10,12 @@ class strtype
 public:
     strtype(char *ptr);
     ~strtype() { delete[] p; }
-    friend ostream &operator<<(ostream &stream, strtype obj);
+    friend ostream &operator<<(ostream &stream, strtype &obj);
 };
 strtype::strtype(char *ptr)
 {
     len = strlen(ptr) + 1;
-    p = new char[len];// () замінено на []
+    p = new char(len);
     if (!p)
     {
         cout << "Allocation error\n";
@@ -24,7 +24,7 @@ strtype::strtype(char *ptr)
     strcpy(p, ptr);
 }
 
-ostream &operator<<(ostream &stream, strtype obj) {
+ostream &operator<<(ostream &stream, strtype &obj) {
     stream << obj.p << ", " << obj.len;
     return stream;
 }
